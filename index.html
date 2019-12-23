@@ -9,10 +9,18 @@
 <body>
 
   <div id="player-img"></div>
-  <div id="player-text">Player</p>
+  <div id="player-text">Player</div>
   <div id="computer-img"></div>
-  <div id="computer-text">Computer</p>
-  <div id="computer-lvl"></p>
+  <div id="computer-text">Computer</div>
+  <div id="computer-lvl"></div>
+
+  <div id="player-rock"></div>
+  <div id="player-paper"></div>
+  <div id="player-scissors"></div>
+  <div id="computer-rock"></div>
+  <div id="computer-paper"></div>
+  <div id="computer-scissors"></div>
+
 
   <div id="prompt">WHAT WILL<br>Player DO?</div>
 
@@ -60,6 +68,9 @@
     function playOneRound(playerSelection, computerSelection) {
       const player = playerSelection.toLowerCase();
       const comp = computerSelection.toLowerCase();
+
+      showChoices(player, comp);
+
       var winner;
       if (player == "rock") {
         if (comp == "scissors") {
@@ -96,6 +107,83 @@
       randomChoice = choices[Math.floor(Math.random()*3)];
       return randomChoice
     }
+
+    function resetGame() {
+      var playerImg = document.getElementById('player-img');
+      var computerImg = document.getElementById('computer-img');
+
+      var prompt = document.getElementById('prompt');
+      var playerWon = document.getElementById('player-won');
+      var playerLost = document.getElementById('player-lost');
+      var playerDraw = document.getElementById('player-draw');
+
+      var playerRock = document.getElementById('player-rock');
+      var playerPaper = document.getElementById('player-paper');
+      var playerScissors = document.getElementById('player-scissors');
+
+      var computerRock = document.getElementById('computer-rock');
+      var computerPaper = document.getElementById('computer-paper');
+      var computerScissors = document.getElementById('computer-scissors');
+
+      prompt.style.opacity = 1;
+      playerImg.style.opacity = 1;
+      computerImg.style.opacity = 1;
+
+      playerWon.style.opacity = 0;
+      playerLost.style.opacity = 0;
+      playerDraw.style.opacity = 0;
+
+      playerRock.style.opacity = 0;
+      playerPaper.style.opacity = 0;
+      playerScissors.style.opacity = 0;
+
+      computerRock.style.opacity = 0;
+      computerPaper.style.opacity = 0;
+      computerScissors.style.opacity = 0;
+
+    }
+    function showChoices(player, computer) {
+      var playerImg = document.getElementById('player-img');
+      var playerRock = document.getElementById('player-rock');
+      var playerPaper = document.getElementById('player-paper');
+      var playerScissors = document.getElementById('player-scissors');
+
+      var computerImg = document.getElementById('computer-img');
+      var computerRock = document.getElementById('computer-rock');
+      var computerPaper = document.getElementById('computer-paper');
+      var computerScissors = document.getElementById('computer-scissors');
+
+      playerImg.style.opacity = 0;
+      if (player == "rock") {
+        playerRock.style.opacity = 1;
+        playerPaper.style.opacity = 0;
+        playerScissors.style.opacity = 0;
+      } else if (player == "paper") {
+        playerRock.style.opacity = 0;
+        playerPaper.style.opacity = 1;
+        playerScissors.style.opacity = 0;
+      } else {
+        playerRock.style.opacity = 0;
+        playerPaper.style.opacity = 0;
+        playerScissors.style.opacity = 1;
+      }
+
+      computerImg.style.opacity = 0;
+      if (computer == "rock") {
+        computerRock.style.opacity = 1;
+        computerPaper.style.opacity = 0;
+        computerScissors.style.opacity = 0;
+      } else if (computer == "paper") {
+        computerRock.style.opacity = 0;
+        computerPaper.style.opacity = 1;
+        computerScissors.style.opacity = 0;
+      } else {
+        computerRock.style.opacity = 0;
+        computerPaper.style.opacity = 0;
+        computerScissors.style.opacity = 1;
+      }
+    }
+
   </script>
 
 

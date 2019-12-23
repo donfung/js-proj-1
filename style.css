@@ -188,6 +188,68 @@ body {
   line-height: 150%;
 }
 
+#player-rock{
+  content: url('assets/player-rock.png');
+  position: fixed;
+  right: 48.5%;
+  bottom: 6.5%;
+  left: 4%;
+  bottom: 13.5%;
+  opacity: 0;
+  width: 50vw;
+  height: 50vh;
+}
+#computer-rock{
+  content: url('assets/computer-rock.png');
+  position: fixed;
+  right: 7%;
+  top: 9.5%;
+  opacity: 0;
+  width: 40vw;
+  height: 40vh;
+}
+
+#player-paper{
+  content: url('assets/player-paper.png');
+  position: fixed;
+  right: 48.5%;
+  bottom: 6.5%;
+  left: 4%;
+  bottom: 20.5%;
+  opacity: 0;
+  width: 50vw;
+  height: 50vh;
+}
+#computer-paper{
+  content: url('assets/computer-paper.png');
+  position: fixed;
+  right: 6%;
+  top: 9.5%;
+  opacity: 0;
+  width: 40vw;
+  height: 40vh;
+}
+
+#player-scissors{
+  content: url('assets/player-scissors.png');
+  position: fixed;
+  right: 48.5%;
+  bottom: 6.5%;
+  left: 6%;
+  bottom: 25%;
+  opacity: 0;
+  width: 45vw;
+  height: 45vh;
+}
+#computer-scissors{
+  content: url('assets/computer-scissors.png');
+  position: fixed;
+  right: 15%;
+  top: 16%;
+  opacity: 0;
+  width: 25vw;
+  height: 25vh;
+}
 
 ::selection {
   color: none;
