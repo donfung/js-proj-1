@@ -1,0 +1,195 @@
+@font-face {
+  font-family: "Pokemon";
+  src: url('assets/pokemon.ttf') format('truetype');
+}
+
+body {
+  background-image: url('assets/pokemon-battle-background.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+#player-img {
+  content:url('assets/self.png');
+  position: fixed;
+  width: 30vw;
+  height: 30vh;
+  left: 10%;
+  bottom: 30.5%;
+}
+
+
+#computer-img {
+  content:url('assets/opponent.png');
+  width: 40vw;
+  height: 40vh;
+  position: fixed;
+  right: 5%;
+  top: 5%;
+}
+#computer-text {
+  position: fixed;
+  left: 10%;
+  top: 14%;
+  font-family: "Pokemon";
+  font-weight: bolder;
+  font-size: 2.5vh;
+
+  font-size: 2.5vw;
+  color: transparent;
+  text-shadow: 0 0 3px rgba(0,0,0,5);
+
+}
+#player-text {
+  position: fixed;
+  right: 22%;
+  bottom: 40.5%;
+  font-family: "Pokemon";
+  font-weight: bolder;
+  font-size: 2.5vw;
+  color: transparent;
+  text-shadow: 0 0 3px rgba(0,0,0,5);
+
+}
+
+#prompt {
+  position: fixed;
+  left: 7%;
+  bottom: 4%;
+  font-family: "Pokemon";
+  font-weight: bolder;
+  font-size: 3.5vw;
+  line-height: 150%;
+  color: white;
+  text-shadow: 0 0 25px rgba(0,0,0,5);
+
+}
+#rock {
+  position: fixed;
+  right: 35.5%;
+  bottom: 17%;
+  font-family: "Pokemon";
+  font-weight: bolder;
+  font-size: 3vw;
+  text-shadow: 0 0 2px rgba(0,0,0,5);
+}
+
+#paper {
+  position: fixed;
+  right: 4%;
+  bottom: 17%;
+  font-family: "Pokemon";
+  font-weight: bolder;
+  font-size: 3vw;
+  text-shadow: 0 0 2px rgba(0,0,0,5);
+}
+#scissors {
+  position: fixed;
+  right: 23.5%;
+  bottom: 5%;
+  font-family: "Pokemon";
+  font-weight: bolder;
+  font-size: 3vw;
+  text-shadow: 0 0 2px rgba(0,0,0,5);
+}
+
+#run {
+  position: fixed;
+  right: 10%;
+  bottom: 5%;
+  font-family: "Pokemon";
+  font-weight: bolder;
+  font-size: 3vw;
+  text-shadow: 0 0 2px rgba(0,0,0,5);
+}
+
+#rock-arrow{
+  content:url('assets/hover-arrow.png');
+  position: fixed;
+  right: 48.5%;
+  bottom: 19%;
+  opacity: 0%;
+}
+
+#paper-arrow{
+  content:url('assets/hover-arrow.png');
+  position: fixed;
+  right: 20%;
+  bottom: 19%;
+  opacity: 0%;
+}
+
+#scissors-arrow{
+  content:url('assets/hover-arrow.png');
+  position: fixed;
+  right: 48.5%;
+  bottom: 6.5%;
+  opacity: 0%;
+}
+
+#run-arrow{
+  content:url('assets/hover-arrow.png');
+  position: fixed;
+  right: 20%;
+  bottom: 6.5%;
+  opacity: 0%;
+}
+#rock:hover, #paper:hover, #scissors:hover, #run:hover {
+  cursor: pointer;
+}
+
+#rock:hover ~ #rock-arrow{
+  opacity: 100%;
+}
+
+#paper:hover ~ #paper-arrow{
+  opacity: 100%;
+}
+
+#scissors:hover ~ #scissors-arrow{
+  opacity: 100%;
+}
+
+#run:hover ~ #run-arrow{
+  opacity: 100%;
+}
+
+#player-won, #player-lost, #player-draw {
+  opacity: 0%;
+}
+
+#player-won {
+  position: fixed;
+  left: 7%;
+  bottom: 6%;
+  font-family: "Pokemon";
+  font-weight: bolder;
+  font-size: 3.0vw;
+  line-height: 150%;
+}
+
+#player-lost {
+  position: fixed;
+  left: 7%;
+  bottom: 6%;
+  font-family: "Pokemon";
+  font-weight: bolder;
+  font-size: 3.0vw;
+  line-height: 150%;
+}
+#player-draw {
+  position: fixed;
+  left: 7%;
+  bottom: 6%;
+  font-family: "Pokemon";
+  font-weight: bolder;
+  font-size: 3.0vw;
+  line-height: 150%;
+}
+
+
+::selection {
+  color: none;
+  background: none;
+}

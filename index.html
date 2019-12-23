@@ -1,0 +1,105 @@
+<!DOCTYPE="HTML">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+  <div id="player-img"></div>
+  <div id="player-text">Player</p>
+  <div id="computer-img"></div>
+  <div id="computer-text">Computer</p>
+  <div id="computer-lvl"></p>
+
+  <div id="prompt">WHAT WILL<br>Player DO?</div>
+
+  <div id="rock" onclick="game(this.id)">ROCK</div>
+  <div id="paper" onclick="game(this.id)">PAPER</div>
+  <div id="scissors" onclick="game(this.id)">SCISSORS</div>
+  <div id="run" onclick=resetGame()>RUN</div>
+
+  <div id="rock-arrow"></div>
+  <div id="paper-arrow"></div>
+  <div id="scissors-arrow"></div>
+  <div id="run-arrow"></div>
+
+  <div id='player-won'>It's super <br>effective!</div>
+  <div id='player-lost'>It's not very <br>effective... </div>
+  <div id='player-draw'>Nothing <br>happened.</div>
+
+  <script>
+    function game(action) {
+      var comp = computerPlay();
+      var winner = playOneRound(action, comp);
+      console.log(winner);
+      var prompt = document.getElementById('prompt');
+      prompt.style.opacity = 0;
+
+      var playerWon = document.getElementById('player-won');
+      var playerLost = document.getElementById('player-lost');
+      var playerDraw = document.getElementById('player-draw');
+
+      if (winner == "Player") {
+        playerWon.style.opacity = 100;
+        playerLost.style.opacity = 0;
+        playerDraw.style.opacity = 0;
+      } else if (winner == "Computer") {
+        playerWon.style.opacity = 0;
+        playerLost.style.opacity = 100;
+        playerDraw.style.opacity = 0;
+      } else {
+        playerWon.style.opacity = 0;
+        playerLost.style.opacity = 0;
+        playerDraw.style.opacity = 100;
+      }
+
+    }
+    function playOneRound(playerSelection, computerSelection) {
+      const player = playerSelection.toLowerCase();
+      const comp = computerSelection.toLowerCase();
+      var winner;
+      if (player == "rock") {
+        if (comp == "scissors") {
+          winner = "Player";
+        } else if (comp == "paper") {
+          winner = "Computer";
+        } else {
+          winner = "Draw";
+        }
+      }
+      if (player == "scissors") {
+        if (comp == "scissors") {
+          winner = "Draw";
+        } else if (comp == "paper") {
+          winner = "Player";
+        } else {
+          winner = "Computer";
+        }
+      }
+      if (player == "paper") {
+        if (comp == "scissors") {
+          winner = "Computer";
+        } else if (comp == "paper") {
+          winner = "Draw";
+        } else {
+          winner = "Player";
+        }
+      }
+      return winner
+    }
+
+    function computerPlay() {
+      var choices = ["Rock", "Paper", "Scissors"];
+      randomChoice = choices[Math.floor(Math.random()*3)];
+      return randomChoice
+    }
+  </script>
+
+
+
+</body>
+
+</html>
